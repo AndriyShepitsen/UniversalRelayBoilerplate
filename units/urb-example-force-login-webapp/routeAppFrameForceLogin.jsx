@@ -1,12 +1,12 @@
 // @flow
 
 import Async from 'react-code-splitting'
-import { graphql } from 'react-relay'
+import {graphql} from 'react-relay'
 import React from 'react'
 import Route from 'found/lib/Route'
 
 const ForceLogin = props => (
-  <Async load={import( './components/ForceLogin' )} componentProps={props} />
+  <Async load={import( './components/ForceLogin' )} componentProps={props}/>
 )
 
 export default (
