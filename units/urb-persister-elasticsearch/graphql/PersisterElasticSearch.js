@@ -1,8 +1,12 @@
 // @flow
 
-import uuid from 'node-uuid'
+import elasticsearch from 'elasticsearch'
 
-const Uuid_Null = '00000000-0000-0000-0000-000000000000'
+require( 'dotenv' ).load()
+
+var client = new elasticsearch.Client( {
+  host: process.env.ELASTIC_SEARCH_CONNECTION_POINTS,
+} )
 
 export default class PersisterElasticSearch {
   stores: Object
@@ -12,8 +16,8 @@ export default class PersisterElasticSearch {
   }
 
   getStore( entityName: string ) {
-    if ( entityName in this.stores ) return this.stores[entityName]
-    else return ( this.stores[entityName] = [])
+    if ( entityName in this.stores ) return this.stores[ entityName ]
+    else return ( this.stores[ entityName ] = [])
   }
 
   findIndexes( entityName: string, filter: Object ) {
@@ -23,7 +27,7 @@ export default class PersisterElasticSearch {
     for ( let [ objectInStore, index ] of store ) {
       let filterMatched = true
       for ( let filterField in filter )
-        if ( objectInStore[filterField] !== filter[filterField]) {
+        if ( objectInStore[ filterField ] !== filter[ filterField ] ) {
           filterMatched = false
           break
         }
@@ -41,37 +45,54 @@ export default class PersisterElasticSearch {
     store.map( objectInStore => {
       let filterMatched = true
       for ( let filterField in filter )
-        if ( objectInStore[filterField] !== filter[filterField]) {
+        if ( objectInStore[ filterField ] !== filter[ filterField ] ) {
           filterMatched = false
           break
         }
 
       if ( filterMatched ) arr_Objects.push( objectInStore )
-    })
+    } )
 
     return arr_Objects
   }
 
-  getOneObject(
-    entityName: string,
-    ObjectType: any,
-    filters: Array<any>
-  ): Promise<any> {
+  getOneObject( entityName: string,
+                ObjectType: any,
+                filters: Array<any> ): Promise<any> {
     const arr_Objects = filters.map(
-      filter => this.findObjects( entityName, filter )[0]
+      filter => this.findObjects( entityName, filter )[ 0 ]
     )
     return Promise.resolve( arr_Objects )
   }
 
-  getObjectList(
-    entityName: string,
-    ObjectType: any,
-    filters: Array<any>
-  ): Promise<Array<any>> {
-    const arr_arr_Objects = filters.map( filter =>
-      this.findObjects( entityName, filter )
-    )
-    return Promise.resolve( arr_arr_Objects )
+  getObjectList( entityName: string,
+                 ObjectType: any,
+                 query: {
+                   index: string,
+                   type: entityName,
+                   body: string
+
+                 } ): Promise<any> {
+
+    const resultPromises = []
+
+    resultPromises.push(
+      new Promise( ( resolve, reject ) => {
+        client.search( query,
+
+          ( err, res ) => {
+            if ( err ) reject( err )
+            else {
+              const arrRetObj = []
+              for ( let entity of res.hits.hits )
+                arrRetObj.push( new ObjectType( entity ) )
+              resolve( arrRetObj )
+            }
+          }
+        )
+      } ) )
+
+    return Promise.All( resultPromises )
   }
 
   add( entityName: string, fields: any, ObjectType: any ): Promise<any> {
@@ -88,9 +109,9 @@ export default class PersisterElasticSearch {
     const newFields = {}
     newFields.id = fields.id
 
-    const an_Object = this.findObjects( entityName, newFields )[0]
+    const an_Object = this.findObjects( entityName, newFields )[ 0 ]
 
-    for ( let fieldName in fields ) an_Object[fieldName] = fields[fieldName]
+    for ( let fieldName in fields ) an_Object[ fieldName ] = fields[ fieldName ]
 
     return Promise.resolve()
   }
@@ -98,7 +119,7 @@ export default class PersisterElasticSearch {
   remove( entityName: string, fields: any ): Promise<null> {
     const store = this.getStore( entityName )
 
-    const indexToDelete = this.findIndexes( entityName, fields )[0]
+    const indexToDelete = this.findIndexes( entityName, fields )[ 0 ]
     store.splice( indexToDelete, 1 )
 
     return Promise.resolve()
@@ -140,7 +161,7 @@ export default class PersisterElasticSearch {
   confirmHealth(): Promise<null> {
     return new Promise( ( resolve, reject ) => {
       resolve()
-    })
+    } )
   }
 
   initialize( runAsPartOfSetupDatabase: boolean, cb: Function ): void {
