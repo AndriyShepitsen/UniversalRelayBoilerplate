@@ -1,5 +1,6 @@
 // @flow
 
+import '../../../sv-agent-server/graphql/model/Agent'
 import '../../../urb-base-server/graphql/model/User.schemas'
 import '../../../urb-base-server/graphql/model/UserAccount'
 import '../../../urb-base-server/graphql/model/UserAccount.schema'
