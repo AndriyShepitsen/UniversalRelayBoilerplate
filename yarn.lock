@@ -307,6 +307,10 @@ ast-types@0.8.12:
   version "0.8.12"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.8.12.tgz#a0d90e4351bb887716c83fd637ebf818af4adfcc"
 
+ast-types@0.8.15:
+  version "0.8.15"
+  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.8.15.tgz#8eef0827f04dff0ec8857ba925abe3fea6194e52"
+
 ast-types@0.9.11:
   version "0.9.11"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.9.11.tgz#371177bb59232ff5ceaa1d09ee5cad705b1a5aa9"
@@ -2874,40 +2878,40 @@ dotenv@4.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
 
 draft-js-export-html@>=0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/draft-js-export-html/-/draft-js-export-html-0.6.0.tgz#cc80f0544c43d0a7fedbc53c0cb0914e8090f769"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/draft-js-export-html/-/draft-js-export-html-1.0.2.tgz#d3a6c1ebec0d7170a736be51f526d74eea43596b"
   dependencies:
-    draft-js-utils ">=0.2.0"
+    draft-js-utils "^1.0.2"
 
 draft-js-export-markdown@>=0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/draft-js-export-markdown/-/draft-js-export-markdown-0.3.0.tgz#86390e03ceaf1d347fc616867ab7f535eb76bf42"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/draft-js-export-markdown/-/draft-js-export-markdown-1.0.2.tgz#00c3f135cb2f84f3f411a07438efbef4f0df700e"
   dependencies:
-    draft-js-utils ">=0.2.0"
+    draft-js-utils "^1.0.2"
 
-draft-js-import-element@>=0.5.0, draft-js-import-element@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/draft-js-import-element/-/draft-js-import-element-0.5.0.tgz#1d6c470561d6e4d40aa23d9b6d338b1e8d180fe1"
+draft-js-import-element@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/draft-js-import-element/-/draft-js-import-element-1.0.2.tgz#a3488ac21ebcfac29e39c9e68e59bb515fc51187"
   dependencies:
-    draft-js-utils ">=0.2.0"
-    synthetic-dom "^0.2.0"
+    draft-js-utils "^1.0.2"
+    synthetic-dom "^1.0.2"
 
 draft-js-import-html@>=0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/draft-js-import-html/-/draft-js-import-html-0.4.0.tgz#efa0b970efb546bd8d4989b3a491ff5575b68b1b"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/draft-js-import-html/-/draft-js-import-html-1.0.2.tgz#66db111b6aaf0ab9b9a96025b7d93701ee09c64c"
   dependencies:
-    draft-js-import-element "^0.5.0"
+    draft-js-import-element "^1.0.2"
 
 draft-js-import-markdown@>=0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/draft-js-import-markdown/-/draft-js-import-markdown-0.3.0.tgz#e4500c6ff52c9d66d01f7cdc94328a5eaee14956"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/draft-js-import-markdown/-/draft-js-import-markdown-1.0.2.tgz#2738cfd3fcb0b87205ea4f27402ef3b0dfea3010"
   dependencies:
-    draft-js-import-element ">=0.5.0"
-    synthetic-dom "^0.2.0"
+    draft-js-import-element "^1.0.2"
+    synthetic-dom "^1.0.2"
 
-draft-js-utils@>=0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/draft-js-utils/-/draft-js-utils-0.2.0.tgz#2403a314a055f73952517ef96a7cc4ccdf132c4f"
+draft-js-utils@>=0.2.0, draft-js-utils@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/draft-js-utils/-/draft-js-utils-1.0.2.tgz#55e68fcb9cc1b312669c6f40ef89134750b05f31"
 
 draft-js@>=0.10.0:
   version "0.10.1"
@@ -3019,6 +3023,10 @@ enhanced-resolve@^3.4.0:
     memory-fs "^0.4.0"
     object-assign "^4.0.1"
     tapable "^0.2.7"
+
+enquire.js@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/enquire.js/-/enquire.js-2.1.6.tgz#3e8780c9b8b835084c3f60e166dbc3c2a3c89814"
 
 entities@^1.1.1, entities@~1.1.1:
   version "1.1.1"
@@ -4852,6 +4860,10 @@ jest-haste-map@^20.0.4:
     sane "~1.6.0"
     worker-farm "^1.3.1"
 
+jquery@>=1.7.2:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
+
 js-base64@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
@@ -4936,6 +4948,12 @@ json-stable-stringify@^1.0.1:
 json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
+
+json2mq@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/json2mq/-/json2mq-0.2.0.tgz#b637bd3ba9eabe122c83e9720483aeb10d2c904a"
+  dependencies:
+    string-convert "^0.2.0"
 
 json3@^3.3.2:
   version "3.3.2"
@@ -5295,6 +5313,10 @@ lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+
 lodash.defaults@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-3.1.2.tgz#c7308b18dbf8bc9372d701a73493c61192bd2e2c"
@@ -5380,6 +5402,10 @@ lodash.templatesettings@^3.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
 lodash.times@^4.3.2:
   version "4.3.2"
@@ -7106,6 +7132,15 @@ react-hot-loader@3.0.0-beta.7:
     redbox-react "^1.3.6"
     source-map "^0.4.4"
 
+react-image-gallery@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/react-image-gallery/-/react-image-gallery-0.8.3.tgz#508577a261e643487b344f05e9ec1a24b2f10573"
+  dependencies:
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.8"
+    react-swipeable "^4.0.0"
+
 react-jss@7.1.0, react-jss@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/react-jss/-/react-jss-7.1.0.tgz#de9430cbe01a82f3b2dcf87a03b798130868ff93"
@@ -7366,7 +7401,7 @@ react-relay@1.3.0:
     react-static-container "^1.0.1"
     relay-runtime "1.3.0"
 
-react-rte@0.14.1:
+react-rte@^0.14.1:
   version "0.14.1"
   resolved "https://registry.yarnpkg.com/react-rte/-/react-rte-0.14.1.tgz#b35f5cf8e9bd0f492b4bbc52f9a42c701964fb21"
   dependencies:
@@ -7396,9 +7431,27 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
+react-slick@^0.15.4:
+  version "0.15.4"
+  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.15.4.tgz#6709c87b06e7640feeacc06711be42cc2066aabe"
+  dependencies:
+    can-use-dom "^0.1.0"
+    classnames "^2.2.5"
+    create-react-class "^15.5.2"
+    enquire.js "^2.1.6"
+    json2mq "^0.2.0"
+    object-assign "^4.1.0"
+    slick-carousel "^1.6.0"
+
 react-static-container@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-static-container/-/react-static-container-1.0.1.tgz#694c0dd68a896b879519afb548399cc1989c9ab0"
+
+react-swipeable@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-4.1.0.tgz#2796c903e810451058f3c69dfc35740d5857ec7c"
+  dependencies:
+    prop-types "^15.5.8"
 
 react-timer-mixin@^0.13.2:
   version "0.13.3"
@@ -7522,11 +7575,20 @@ rebound@^0.0.13:
   version "0.0.13"
   resolved "https://registry.yarnpkg.com/rebound/-/rebound-0.0.13.tgz#4a225254caf7da756797b19c5817bf7a7941fac1"
 
-recast@0.10.33, recast@^0.10.10:
+recast@0.10.33:
   version "0.10.33"
   resolved "https://registry.yarnpkg.com/recast/-/recast-0.10.33.tgz#942808f7aa016f1fa7142c461d7e5704aaa8d697"
   dependencies:
     ast-types "0.8.12"
+    esprima-fb "~15001.1001.0-dev-harmony-fb"
+    private "~0.1.5"
+    source-map "~0.5.0"
+
+recast@^0.10.10:
+  version "0.10.43"
+  resolved "https://registry.yarnpkg.com/recast/-/recast-0.10.43.tgz#b95d50f6d60761a5f6252e15d80678168491ce7f"
+  dependencies:
+    ast-types "0.8.15"
     esprima-fb "~15001.1001.0-dev-harmony-fb"
     private "~0.1.5"
     source-map "~0.5.0"
@@ -8196,6 +8258,12 @@ slice-ansi@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
 
+slick-carousel@^1.6.0:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.7.1.tgz#51f5489bbb52212542ccbe9f42689f818bd29ed2"
+  dependencies:
+    jquery ">=1.7.2"
+
 slide@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
@@ -8467,6 +8535,10 @@ strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
 
+string-convert@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/string-convert/-/string-convert-0.2.1.tgz#6982cc3049fbb4cd85f8b24568b9d9bf39eeff97"
+
 string-length@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/string-length/-/string-length-1.0.1.tgz#56970fb1c38558e9e70b728bf3de269ac45adfac"
@@ -8610,9 +8682,9 @@ symbol-observable@^1.0.1, symbol-observable@^1.0.3, symbol-observable@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
-synthetic-dom@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/synthetic-dom/-/synthetic-dom-0.2.1.tgz#6c76fcf91ea9a5231318f8f415e27883d534df86"
+synthetic-dom@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/synthetic-dom/-/synthetic-dom-1.0.2.tgz#4cfaf54cc6a551fed1d3271eba83a4cc4663a71e"
 
 table@^4.0.1:
   version "4.0.1"
@@ -9035,17 +9107,13 @@ utils-merge@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
 
-uuid@3.0.1:
+uuid@3.0.1, uuid@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
 
 uuid@^2.0.1, uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
-
-uuid@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
 v8flags@^2.1.1:
   version "2.1.1"

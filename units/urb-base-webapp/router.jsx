@@ -13,13 +13,13 @@ import AppFrame from '../_configuration/urb-base-webapp/AppFrame'
 
 export const historyMiddlewares = [ queryMiddleware ]
 
-export function createResolver( fetcher: any ) {
+export function createResolver(fetcher: any) {
   const environment = new Environment({
-    network: Network.create( ( ...args ) => fetcher.fetch( ...args ) ),
-    store: new Store( new RecordSource() ),
+    network: Network.create((...args) => fetcher.fetch(...args)),
+    store: new Store(new RecordSource()),
   })
 
-  return new Resolver( environment )
+  return new Resolver(environment)
 }
 
 export const routeConfig = makeRouteConfig(

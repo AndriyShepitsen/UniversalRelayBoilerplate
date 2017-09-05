@@ -50,13 +50,13 @@ const styles = theme => ({
     flex: '0 1 auto',
   },
   appBar: {
-    transition: theme.transitions.create( 'width' ),
+    transition: theme.transitions.create('width'),
   },
   // appBarHome: {
   //   backgroundColor: 'transparent',
   //   boxShadow: 'none',
   // },
-  [theme.breakpoints.up( 'lg' )]: {
+  [theme.breakpoints.up('lg')]: {
     drawer: {
       width: '250px',
     },
@@ -70,8 +70,8 @@ const styles = theme => ({
 })
 
 class AppFrame extends Component<any, { drawerOpen: boolean }> {
-  constructor( props: Object, context: Object ) {
-    super( props, context )
+  constructor(props: Object, context: Object) {
+    super(props, context)
 
     this.state = { drawerOpen: false }
   }
@@ -92,7 +92,7 @@ class AppFrame extends Component<any, { drawerOpen: boolean }> {
     let appBarClassName = classes.appBar
     let navIconClassName = classes.icon
 
-    if ( drawerDocked ) {
+    if (drawerDocked) {
       navIconClassName += ` ${classes.navIconHide}`
       appBarClassName += ` ${classes.appBarShift}`
     } else {
@@ -139,7 +139,7 @@ class AppFrame extends Component<any, { drawerOpen: boolean }> {
 }
 
 export default createFragmentContainer(
-  withStyles( styles )( AppFrame ),
+  withStyles(styles)(AppFrame),
   graphql`
     fragment AppFrame_Viewer on Viewer {
       UserToken2

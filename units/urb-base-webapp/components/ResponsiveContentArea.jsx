@@ -11,7 +11,7 @@ const styles = theme => ({
     maxWidth: '100%',
     margin: '0 auto',
   }),
-  [theme.breakpoints.up( 948 )]: {
+  [theme.breakpoints.up(948)]: {
     content: {
       maxWidth: 900,
     },
@@ -26,12 +26,8 @@ class ResponsiveContentArea extends React.Component<any, any> {
   render() {
     const { classes } = this.props
 
-    return (
-      <div className={classes.content}>
-        {this.props.children}
-      </div>
-    )
+    return <div className={classes.content}>{this.props.children}</div>
   }
 }
 
-export default withStyles( styles )( ResponsiveContentArea )
+export default withStyles(styles)(ResponsiveContentArea)
