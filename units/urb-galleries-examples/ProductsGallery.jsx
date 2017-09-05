@@ -1,13 +1,13 @@
 // @flow
 
-import { withStyles } from 'material-ui/styles'
+import {withStyles} from 'material-ui/styles'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Slider from 'react-slick'
 
 const styles = theme => ({
   galleryRoot: {
-    maxWidth: '100%',
+    maxWidth: '100%'left,
   },
 })
 
@@ -17,7 +17,7 @@ class ProductsGallery extends React.Component<any, any> {
   }
 
   render() {
-    const { classes } = this.props
+    const {classes} = this.props
 
     let settings = {
       dots: false,
@@ -35,20 +35,15 @@ class ProductsGallery extends React.Component<any, any> {
           <div>
             <img
               alt=""
-              src="http://res.cloudinary.com/df0hinrzw/image/upload/c_scale,h_600/v1490916716/backgrounds/tianjin-2185510_1920.jpg"
-            />
+              src="http://res.cloudinary.com/df0hinrzw/image/upload/c_scale,h_600/v1490916716/backgrounds/tianjin-2185510_1920.jpg"/>
           </div>
-          <div>
-            <img
-              alt=""
-              src="http://res.cloudinary.com/df0hinrzw/image/upload/c_scale,h_600/v1490916716/backgrounds/tianjin-2185510_1920.jpg"
-            />
+          <div><img
+            alt=""
+            src="http://res.cloudinary.com/df0hinrzw/image/upload/c_scale,h_600/v1490916716/backgrounds/tianjin-2185510_1920.jpg"/>
           </div>
-          <div>
-            <img
-              alt=""
-              src="http://res.cloudinary.com/df0hinrzw/image/upload/c_scale,h_600/v1490916716/backgrounds/tianjin-2185510_1920.jpg"
-            />
+          <div><img
+            alt=""
+            src="http://res.cloudinary.com/df0hinrzw/image/upload/c_scale,h_600/v1490916716/backgrounds/tianjin-2185510_1920.jpg"/>
           </div>
         </Slider>
       </div>
