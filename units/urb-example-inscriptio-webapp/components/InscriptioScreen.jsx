@@ -8,16 +8,18 @@ import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 import withScriptjs from 'react-google-maps/lib/async/withScriptjs'
 import { createFragmentContainer, graphql } from 'react-relay'
 
+import ImagesGallery from '../../urb-galleries-examples/ImagesGallery'
+import ProductGallery from '../../urb-galleries-examples/ProductsGallery'
 import ResponsiveContentArea from '../../urb-base-webapp/components/ResponsiveContentArea'
 
 const MapComponent = withScriptjs(
-  withGoogleMap( props =>
+  withGoogleMap(props => (
     <GoogleMap defaultZoom={props.defaultZoom} center={props.center}>
-      {props.markers.map( ( marker, index ) =>
+      {props.markers.map((marker, index) => (
         <Marker key={index} position={marker.position} />
-      )}
+      ))}
     </GoogleMap>
-  )
+  ))
 )
 
 const styles = {
@@ -35,8 +37,8 @@ class InscriptioScreen extends React.Component<
     rbCtx: PropTypes.object,
   }
 
-  constructor( props: Object, context: Object ) {
-    super( props, context )
+  constructor(props: Object, context: Object) {
+    super(props, context)
 
     this.state = {
       center: {
@@ -56,10 +58,18 @@ class InscriptioScreen extends React.Component<
       'https://maps.googleapis.com/maps/api/js?v=3.28&libraries=places,geometry&key=' +
       this.context.rbCtx.appData.api.googleMapsJavascriptAPI
 
-    console.log( googleMapURL )
+    console.log(googleMapURL)
 
     return (
       <ResponsiveContentArea>
+        <Card className={classes.card}>
+          <ProductGallery />
+        </Card>
+        <br />
+        <Card className={classes.card}>
+          <ImagesGallery />
+        </Card>
+        <br />
         <Card className={classes.card}>
           <CardHeader title="Inscriptio" />
           <CardContent>
@@ -81,7 +91,7 @@ class InscriptioScreen extends React.Component<
 }
 
 export default createFragmentContainer(
-  withStyles( styles )( InscriptioScreen ),
+  withStyles(styles)(InscriptioScreen),
   graphql`
     fragment InscriptioScreen_Viewer on Viewer {
       Inscriptios(first: 2147483647)

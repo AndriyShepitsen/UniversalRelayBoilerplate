@@ -8,16 +8,18 @@ import Route from 'found/lib/Route'
 import EnsayoPublicList from './components/EnsayoPublicList'
 import EnsayoPublicItem from './components/EnsayoPublicItem'
 
-const EnsayoInPaceEditList = props =>
+const EnsayoInPaceEditList = props => (
   <Async
-    load={import( './components/EnsayoInPaceEditList' )}
+    load={import('./components/EnsayoInPaceEditList')}
     componentProps={props}
   />
-const EnsayoInPaceEditScreen = props =>
+)
+const EnsayoInPaceEditScreen = props => (
   <Async
-    load={import( './components/EnsayoInPaceEditScreen' )}
+    load={import('./components/EnsayoInPaceEditScreen')}
     componentProps={props}
   />
+)
 
 export default (
   <Route key="ensayo" path="ensayo">

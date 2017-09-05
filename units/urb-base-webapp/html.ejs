@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
 
-<meta charset="utf-8">
-<%- helmet.title %>
-<%- helmet.meta %>
-<%- helmet.link %>
-<link rel="stylesheet" href="<%- assets_path %>/client.css">
-<style type="text/css" id="server-side-styles">
-  <%- server_side_styles %>
-</style>
-<script>
-  var appData = <%- appData %>
-</script>
+  <meta charset="utf-8">
+  <%- helmet.title %>
+  <%- helmet.meta %>
+  <%- helmet.link %>
+  <link rel="stylesheet" href="<%- assets_path %>/client.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+  <style type="text/css" id="server-side-styles">
+    <%- server_side_styles %>
+  </style>
+  <script>
+    var appData = <%- appData %>
+  </script>
 
-</head><body>
+</head>
+<body>
 
 <div id="root"><%- root_html %></div>
 <script>
@@ -22,4 +26,5 @@
 <script src="<%- assets_path %>/vendor.js"></script>
 <script src="<%- assets_path %>/client.js"></script>
 
-</body></html>
+</body>
+</html>
