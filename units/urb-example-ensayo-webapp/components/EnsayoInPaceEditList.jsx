@@ -20,13 +20,13 @@ class EnsayoInPaceEditList extends React.Component<
     return (
       <div>
         <List>
-          {Ensayos.edges.map( ({ node }) =>
+          {Ensayos.edges.map(({ node }) => (
             <EnsayoInPlaceEditItem
               key={node.id}
               Viewer={Viewer}
               Ensayo={node}
             />
-          )}
+          ))}
         </List>
       </div>
     )

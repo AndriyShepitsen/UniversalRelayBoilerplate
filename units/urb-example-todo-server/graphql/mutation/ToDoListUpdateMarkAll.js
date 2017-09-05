@@ -11,27 +11,27 @@ export default mutationWithClientMutationId({
   name: 'ToDoListUpdateMarkAll',
 
   inputFields: {
-    ToDo_Complete: { type: new GraphQLNonNull( GraphQLBoolean ) },
+    ToDo_Complete: { type: new GraphQLNonNull(GraphQLBoolean) },
   },
 
   outputFields: {
     changedToDos: {
-      type: new GraphQLList( ToDoType ),
+      type: new GraphQLList(ToDoType),
       resolve: (
         { arr_local_ids_Changed_ToDos },
         args,
         context,
         { rootValue: objectManager }
       ) =>
-        arr_local_ids_Changed_ToDos.map( local_id =>
-          objectManager.getOneObject( 'ToDo', { id: local_id })
+        arr_local_ids_Changed_ToDos.map(local_id =>
+          objectManager.getOneObject('ToDo', { id: local_id })
         ),
     },
 
     Viewer: {
       type: ViewerType,
-      resolve: ( parent, args, context, { rootValue: objectManager }) =>
-        objectManager.getOneObject( 'User', {
+      resolve: (parent, args, context, { rootValue: objectManager }) =>
+        objectManager.getOneObject('User', {
           id: objectManager.getViewerUserId(),
         }),
     },

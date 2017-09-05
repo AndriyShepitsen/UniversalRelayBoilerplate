@@ -39,8 +39,8 @@ class EnsayoInPlaceEditProperties extends React.Component<
     Ensayo_Content_RTE: Object
   }
 > {
-  constructor( props: Object, context: Object ) {
-    super( props, context )
+  constructor(props: Object, context: Object) {
+    super(props, context)
 
     const { Ensayo_Title, Ensayo_Description, Ensayo_Content } = this.props
 
@@ -70,7 +70,7 @@ class EnsayoInPlaceEditProperties extends React.Component<
     handlerUpdate({
       Ensayo_Title: this.state.Ensayo_Title,
       Ensayo_Description: this.state.Ensayo_Description,
-      Ensayo_Content: this.state.Ensayo_Content_RTE.toString( 'html' ),
+      Ensayo_Content: this.state.Ensayo_Content_RTE.toString('html'),
     })
 
     handlerClose()
@@ -124,4 +124,4 @@ class EnsayoInPlaceEditProperties extends React.Component<
   }
 }
 
-export default withStyles( styles )( EnsayoInPlaceEditProperties )
+export default withStyles(styles)(EnsayoInPlaceEditProperties)

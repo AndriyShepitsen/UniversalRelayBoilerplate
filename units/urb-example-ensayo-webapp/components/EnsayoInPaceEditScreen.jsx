@@ -30,8 +30,8 @@ class EnsayoInPaceEditScreen extends React.Component<
     propertiesIsOpen: boolean
   }
 > {
-  constructor( props: Object, context: Object ) {
-    super( props, context )
+  constructor(props: Object, context: Object) {
+    super(props, context)
 
     this.state = { propertiesIsOpen: false }
   }
@@ -85,14 +85,15 @@ class EnsayoInPaceEditScreen extends React.Component<
             {this.props.children}
           </CardContent>
 
-          {propertiesIsOpen &&
+          {propertiesIsOpen && (
             <EnsayoInPlaceEditProperties
               Ensayo_Title=""
               Ensayo_Content=""
               Ensayo_Description=""
               handlerUpdate={this._handle_updateHandler_Ensayo}
               handlerClose={this._handle_Close_Properties}
-            />}
+            />
+          )}
         </Card>
       </ResponsiveContentArea>
     )
@@ -100,7 +101,7 @@ class EnsayoInPaceEditScreen extends React.Component<
 }
 
 export default createFragmentContainer(
-  withStyles( styles )( EnsayoInPaceEditScreen ),
+  withStyles(styles)(EnsayoInPaceEditScreen),
   graphql`
     fragment EnsayoInPaceEditScreen_Viewer on Viewer {
       id

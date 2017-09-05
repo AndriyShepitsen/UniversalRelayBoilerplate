@@ -28,8 +28,8 @@ class ToDo_Properties extends React.Component<
     ToDo_Text: string
   }
 > {
-  constructor( props: Object, context: Object ) {
-    super( props, context )
+  constructor(props: Object, context: Object) {
+    super(props, context)
 
     const { ToDo_Text } = this.props
 
@@ -76,4 +76,4 @@ class ToDo_Properties extends React.Component<
   }
 }
 
-export default withStyles( styles )( ToDo_Properties )
+export default withStyles(styles)(ToDo_Properties)

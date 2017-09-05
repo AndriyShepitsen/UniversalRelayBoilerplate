@@ -19,8 +19,8 @@ class EnsayoPublicList extends React.Component<any, any> {
     router: PropTypes.object,
   }
 
-  _handle_onClick( id ) {
-    this.context.router.push( '/ensayo/item/' + id )
+  _handle_onClick(id) {
+    this.context.router.push('/ensayo/item/' + id)
   }
 
   render() {
@@ -28,22 +28,22 @@ class EnsayoPublicList extends React.Component<any, any> {
 
     return (
       <ResponsiveContentArea>
-        {Viewer.Ensayos.edges.map( edge =>
+        {Viewer.Ensayos.edges.map(edge => (
           <Card key={edge.node.id} className={classes.card}>
             <CardHeader title={edge.node.Ensayo_Title} />
 
-            <CardContent onClick={() => this._handle_onClick( edge.node.id )}>
+            <CardContent onClick={() => this._handle_onClick(edge.node.id)}>
               {edge.node.Ensayo_Description}
             </CardContent>
           </Card>
-        )}
+        ))}
       </ResponsiveContentArea>
     )
   }
 }
 
 export default createFragmentContainer(
-  withStyles( styles )( EnsayoPublicList ),
+  withStyles(styles)(EnsayoPublicList),
   graphql`
     fragment EnsayoPublicList_Viewer on Viewer {
       Ensayos(first: 2147483647) @connection(key: "EnsayoPublicList_Ensayos") {

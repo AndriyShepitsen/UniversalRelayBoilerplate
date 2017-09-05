@@ -10,7 +10,7 @@ export default class Ensayo {
   Ensayo_Description: string
   Ensayo_Content: string
 
-  constructor( fields: {
+  constructor(fields: {
     id: string,
     Ensayo_User_id: string,
     Ensayo_Title: string,
@@ -25,4 +25,4 @@ export default class Ensayo {
   }
 }
 
-ObjectManager.registerEntity( 'Ensayo', Ensayo )
+ObjectManager.registerEntity('Ensayo', Ensayo)

@@ -9,10 +9,10 @@ export default mutationWithClientMutationId({
   name: 'InscriptioUpdate',
 
   inputFields: {
-    id: { type: new GraphQLNonNull( GraphQLID ) },
-    Inscriptio_LocationLat: { type: new GraphQLNonNull( GraphQLString ) },
-    Inscriptio_LocationLon: { type: new GraphQLNonNull( GraphQLString ) },
-    Inscriptio_Notes: { type: new GraphQLNonNull( GraphQLString ) },
+    id: { type: new GraphQLNonNull(GraphQLID) },
+    Inscriptio_LocationLat: { type: new GraphQLNonNull(GraphQLString) },
+    Inscriptio_LocationLon: { type: new GraphQLNonNull(GraphQLString) },
+    Inscriptio_Notes: { type: new GraphQLNonNull(GraphQLString) },
   },
 
   outputFields: {
@@ -23,7 +23,7 @@ export default mutationWithClientMutationId({
         { ...args },
         context,
         { rootValue: objectManager }
-      ) => objectManager.getOneObject( 'Inscriptio', { id: local_id }),
+      ) => objectManager.getOneObject('Inscriptio', { id: local_id }),
     },
   },
 
@@ -32,9 +32,9 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = fromGlobalId( id ).id
+    const local_id = fromGlobalId(id).id
 
-    await objectManager.update( 'Inscriptio', {
+    await objectManager.update('Inscriptio', {
       id: local_id,
       Inscriptio_LocationLat,
       Inscriptio_LocationLon,

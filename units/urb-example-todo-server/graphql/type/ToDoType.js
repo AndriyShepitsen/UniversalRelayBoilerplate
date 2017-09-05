@@ -14,7 +14,7 @@ export default new GraphQLObjectType({
   isTypeOf: object => object instanceof ToDo,
 
   fields: {
-    id: globalIdField( 'ToDo' ),
+    id: globalIdField('ToDo'),
     ToDo_Text: { type: GraphQLString, resolve: obj => obj.ToDo_Text },
     ToDo_Complete: { type: GraphQLBoolean, resolve: obj => obj.ToDo_Complete },
   },

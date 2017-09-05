@@ -9,8 +9,8 @@ export default mutationWithClientMutationId({
   name: 'ToDoUpdateRename',
 
   inputFields: {
-    id: { type: new GraphQLNonNull( GraphQLID ) },
-    ToDo_Text: { type: new GraphQLNonNull( GraphQLString ) },
+    id: { type: new GraphQLNonNull(GraphQLID) },
+    ToDo_Text: { type: new GraphQLNonNull(GraphQLString) },
   },
 
   outputFields: {
@@ -21,7 +21,7 @@ export default mutationWithClientMutationId({
         { ...args },
         context,
         { rootValue: objectManager }
-      ) => objectManager.getOneObject( 'ToDo', { id: local_id }),
+      ) => objectManager.getOneObject('ToDo', { id: local_id }),
     },
   },
 
@@ -30,9 +30,9 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = fromGlobalId( id ).id
+    const local_id = fromGlobalId(id).id
 
-    await objectManager.update( 'ToDo', {
+    await objectManager.update('ToDo', {
       id: local_id,
       ToDo_Text,
     })

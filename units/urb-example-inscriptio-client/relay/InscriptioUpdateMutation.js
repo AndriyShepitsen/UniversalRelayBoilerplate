@@ -22,7 +22,7 @@ function commit(
   Inscriptio_LocationLon,
   Inscriptio_Notes
 ) {
-  return commitMutation( environment, {
+  return commitMutation(environment, {
     mutation,
     variables: {
       input: {

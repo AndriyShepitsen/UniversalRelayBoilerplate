@@ -10,8 +10,8 @@ export default mutationWithClientMutationId({
   name: 'ToDoUpdateStatus',
 
   inputFields: {
-    id: { type: new GraphQLNonNull( GraphQLID ) },
-    ToDo_Complete: { type: new GraphQLNonNull( GraphQLBoolean ) },
+    id: { type: new GraphQLNonNull(GraphQLID) },
+    ToDo_Complete: { type: new GraphQLNonNull(GraphQLBoolean) },
   },
 
   outputFields: {
@@ -22,13 +22,13 @@ export default mutationWithClientMutationId({
         { ...args },
         context,
         { rootValue: objectManager }
-      ) => objectManager.getOneObject( 'ToDo', { id: local_id }),
+      ) => objectManager.getOneObject('ToDo', { id: local_id }),
     },
 
     Viewer: {
       type: ViewerType,
-      resolve: ( parent, args, context, { rootValue: objectManager }) =>
-        objectManager.getOneObject( 'User', {
+      resolve: (parent, args, context, { rootValue: objectManager }) =>
+        objectManager.getOneObject('User', {
           id: objectManager.getViewerUserId(),
         }),
     },
@@ -39,9 +39,9 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = fromGlobalId( id ).id
+    const local_id = fromGlobalId(id).id
 
-    await objectManager.update( 'ToDo', {
+    await objectManager.update('ToDo', {
       id: local_id,
       ToDo_Complete,
     })

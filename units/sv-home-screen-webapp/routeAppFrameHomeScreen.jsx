@@ -5,19 +5,19 @@ import { graphql } from 'react-relay'
 import React from 'react'
 import Route from 'found/lib/Route'
 
-const ForceLogin = props => (
-  <Async load={import('./components/ForceLogin')} componentProps={props} />
+const HomeScreen = props => (
+  <Async load={import('./components/HomeScreen')} componentProps={props} />
 )
 
 export default (
-  <Route key="force-login" path="force-login">
+  <Route key="Home" path="/">
     <Route
       path="/"
-      Component={ForceLogin}
+      Component={HomeScreen}
       query={graphql`
-        query routeAppFrameForceLogin_ForceLogin_Query {
+        query routeAppFrameHomeScreen_Query {
           Viewer {
-            ...ForceLogin_Viewer
+            ...HomeScreen_Viewer
           }
         }
       `}

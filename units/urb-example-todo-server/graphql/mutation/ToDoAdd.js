@@ -10,7 +10,7 @@ export default mutationWithClientMutationId({
   name: 'ToDoAdd',
 
   inputFields: {
-    ToDo_Text: { type: new GraphQLNonNull( GraphQLString ) },
+    ToDo_Text: { type: new GraphQLNonNull(GraphQLString) },
   },
 
   outputFields: {
@@ -22,11 +22,11 @@ export default mutationWithClientMutationId({
         context,
         { rootValue: objectManager }
       ) => {
-        const an_Object = await objectManager.getOneObject( 'ToDo', {
+        const an_Object = await objectManager.getOneObject('ToDo', {
           id: local_id,
         })
 
-        const arr = await objectManager.getObjectList( 'ToDo', {
+        const arr = await objectManager.getObjectList('ToDo', {
           ToDo_User_id: objectManager.getViewerUserId(),
         })
 
@@ -43,8 +43,8 @@ export default mutationWithClientMutationId({
 
     Viewer: {
       type: ViewerType,
-      resolve: ( parent, args, context, { rootValue: objectManager }) =>
-        objectManager.getOneObject( 'User', {
+      resolve: (parent, args, context, { rootValue: objectManager }) =>
+        objectManager.getOneObject('User', {
           id: objectManager.getViewerUserId(),
         }),
     },
@@ -55,7 +55,7 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = await objectManager.add( 'ToDo', {
+    const local_id = await objectManager.add('ToDo', {
       ToDo_User_id: objectManager.getViewerUserId(),
       ToDo_Text,
       ToDo_Complete: false,

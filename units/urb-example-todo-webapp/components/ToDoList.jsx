@@ -33,7 +33,7 @@ class ToDoList extends React.Component<
     router: PropTypes.object,
   }
 
-  _handle_onClick_MarkAll = ( event, checked ) => {
+  _handle_onClick_MarkAll = (event, checked) => {
     const { relay, Viewer } = this.props
     const { variables } = this.context.relay
     const ToDo_Complete = checked
@@ -47,12 +47,12 @@ class ToDoList extends React.Component<
     )
   }
 
-  _handle_onChange = ( event, tabsValue ) => {
+  _handle_onChange = (event, tabsValue) => {
     const url =
       tabsValue === 2
         ? '/todo/completed'
         : tabsValue === 1 ? '/todo/active' : '/todo'
-    this.context.router.push( url )
+    this.context.router.push(url)
   }
 
   renderTabs() {
@@ -72,7 +72,7 @@ class ToDoList extends React.Component<
     const { Viewer } = this.props
     const { ToDos, ToDo_TotalCount, ToDo_CompletedCount } = Viewer
 
-    if ( !ToDo_TotalCount ) {
+    if (!ToDo_TotalCount) {
       return null
     }
 
@@ -91,9 +91,9 @@ class ToDoList extends React.Component<
           />
         </FormGroup>
         <List>
-          {ToDos.edges.map( ({ node }) =>
+          {ToDos.edges.map(({ node }) => (
             <ToDoItem key={node.id} Viewer={Viewer} ToDo={node} />
-          )}
+          ))}
         </List>
       </div>
     )
@@ -101,7 +101,7 @@ class ToDoList extends React.Component<
 }
 
 export default createFragmentContainer(
-  withStyles( styles )( ToDoList ),
+  withStyles(styles)(ToDoList),
   graphql`
     fragment ToDoList_Viewer on Viewer {
       ToDos(status: $status, first: 2147483647)

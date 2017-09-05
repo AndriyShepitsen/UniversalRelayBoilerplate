@@ -10,7 +10,7 @@ export default class Inscriptio {
   Inscriptio_LocationLon: string
   Inscriptio_Notes: string
 
-  constructor( fields: {
+  constructor(fields: {
     id: string,
     Inscriptio_User_id: string,
     Inscriptio_LocationLat: string,
@@ -25,4 +25,4 @@ export default class Inscriptio {
   }
 }
 
-ObjectManager.registerEntity( 'Inscriptio', Inscriptio )
+ObjectManager.registerEntity('Inscriptio', Inscriptio)

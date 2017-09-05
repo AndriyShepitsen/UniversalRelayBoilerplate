@@ -10,9 +10,9 @@ export default mutationWithClientMutationId({
   name: 'InscriptioAdd',
 
   inputFields: {
-    Inscriptio_LocationLat: { type: new GraphQLNonNull( GraphQLString ) },
-    Inscriptio_LocationLon: { type: new GraphQLNonNull( GraphQLString ) },
-    Inscriptio_Notes: { type: new GraphQLNonNull( GraphQLString ) },
+    Inscriptio_LocationLat: { type: new GraphQLNonNull(GraphQLString) },
+    Inscriptio_LocationLon: { type: new GraphQLNonNull(GraphQLString) },
+    Inscriptio_Notes: { type: new GraphQLNonNull(GraphQLString) },
   },
 
   outputFields: {
@@ -24,11 +24,11 @@ export default mutationWithClientMutationId({
         context,
         { rootValue: objectManager }
       ) => {
-        const an_Object = await objectManager.getOneObject( 'Inscriptio', {
+        const an_Object = await objectManager.getOneObject('Inscriptio', {
           id: local_id,
         })
 
-        const arr = await objectManager.getObjectList( 'Inscriptio', {
+        const arr = await objectManager.getObjectList('Inscriptio', {
           Inscriptio_User_id: objectManager.getViewerUserId(),
         })
 
@@ -45,8 +45,8 @@ export default mutationWithClientMutationId({
 
     Viewer: {
       type: ViewerType,
-      resolve: ( parent, args, context, { rootValue: objectManager }) =>
-        objectManager.getOneObject( 'User', {
+      resolve: (parent, args, context, { rootValue: objectManager }) =>
+        objectManager.getOneObject('User', {
           id: objectManager.getViewerUserId(),
         }),
     },
@@ -57,7 +57,7 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = await objectManager.add( 'Inscriptio', {
+    const local_id = await objectManager.add('Inscriptio', {
       Inscriptio_User_id: objectManager.getViewerUserId(),
       Inscriptio_LocationLat,
       Inscriptio_LocationLon,

@@ -2,9 +2,9 @@
 
 import { connectionDefinitions } from 'graphql-relay'
 
-import InscriptioType from './InscriptioType'
+import AgentType from './AgentType'
 
 export default connectionDefinitions({
-  name: 'Inscriptios',
-  nodeType: InscriptioType,
+  name: 'Agents',
+  nodeType: AgentType,
 })

@@ -23,7 +23,7 @@ export default {
       context,
       { rootValue: objectManager }
     ) => {
-      const arr = await objectManager.getObjectList( 'ToDo', {
+      const arr = await objectManager.getObjectList('ToDo', {
         ToDo_User_id: objectManager.getViewerUserId(),
       })
 
@@ -31,7 +31,7 @@ export default {
         arr.filter(
           a_ToDo =>
             status === 'any' ||
-            a_ToDo.ToDo_Complete === ( status === 'completed' )
+            a_ToDo.ToDo_Complete === (status === 'completed')
         ),
         args
       )
@@ -47,7 +47,7 @@ export default {
       context,
       { rootValue: objectManager }
     ) => {
-      const arr = await objectManager.getObjectList( 'ToDo', {
+      const arr = await objectManager.getObjectList('ToDo', {
         ToDo_User_id: objectManager.getViewerUserId(),
       })
 
@@ -64,11 +64,11 @@ export default {
       context,
       { rootValue: objectManager }
     ) => {
-      const arr = await objectManager.getObjectList( 'ToDo', {
+      const arr = await objectManager.getObjectList('ToDo', {
         ToDo_User_id: objectManager.getViewerUserId(),
       })
 
-      return arr.filter( a_ToDo => a_ToDo.ToDo_Complete ).length
+      return arr.filter(a_ToDo => a_ToDo.ToDo_Complete).length
     },
   },
 }

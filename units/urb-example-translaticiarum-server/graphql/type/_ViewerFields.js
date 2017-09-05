@@ -22,11 +22,11 @@ export default {
       context,
       { rootValue: objectManager }
     ) => {
-      const arr = await objectManager.getObjectList( 'Translaticiarum', {
+      const arr = await objectManager.getObjectList('Translaticiarum', {
         Translaticiarum_User_id: objectManager.getViewerUserId(),
       })
 
-      return connectionFromArray( arr, args )
+      return connectionFromArray(arr, args)
     },
   },
 
@@ -35,7 +35,7 @@ export default {
 
     args: { ...{ id: { type: GraphQLID } } },
 
-    resolve: ( parent, { id }, context, { rootValue: objectManager }) =>
-      objectManager.getOneObject( 'Translaticiarum', { id: fromGlobalId( id ).id }),
+    resolve: (parent, { id }, context, { rootValue: objectManager }) =>
+      objectManager.getOneObject('Translaticiarum', { id: fromGlobalId(id).id }),
   },
 }

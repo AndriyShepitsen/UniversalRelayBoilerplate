@@ -9,10 +9,10 @@ export default mutationWithClientMutationId({
   name: 'EnsayoUpdate',
 
   inputFields: {
-    id: { type: new GraphQLNonNull( GraphQLID ) },
-    Ensayo_Title: { type: new GraphQLNonNull( GraphQLString ) },
-    Ensayo_Description: { type: new GraphQLNonNull( GraphQLString ) },
-    Ensayo_Content: { type: new GraphQLNonNull( GraphQLString ) },
+    id: { type: new GraphQLNonNull(GraphQLID) },
+    Ensayo_Title: { type: new GraphQLNonNull(GraphQLString) },
+    Ensayo_Description: { type: new GraphQLNonNull(GraphQLString) },
+    Ensayo_Content: { type: new GraphQLNonNull(GraphQLString) },
   },
 
   outputFields: {
@@ -23,7 +23,7 @@ export default mutationWithClientMutationId({
         { ...args },
         context,
         { rootValue: objectManager }
-      ) => objectManager.getOneObject( 'Ensayo', { id: local_id }),
+      ) => objectManager.getOneObject('Ensayo', { id: local_id }),
     },
   },
 
@@ -32,9 +32,9 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = fromGlobalId( id ).id
+    const local_id = fromGlobalId(id).id
 
-    await objectManager.update( 'Ensayo', {
+    await objectManager.update('Ensayo', {
       id: local_id,
       Ensayo_Title,
       Ensayo_Description,

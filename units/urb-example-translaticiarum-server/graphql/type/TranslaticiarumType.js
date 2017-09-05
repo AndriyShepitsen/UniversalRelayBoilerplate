@@ -15,7 +15,7 @@ export default new GraphQLObjectType({
   isTypeOf: object => object instanceof Translaticiarum,
 
   fields: {
-    id: globalIdField( 'Translaticiarum' ),
+    id: globalIdField('Translaticiarum'),
     Translaticiarum_Start: {
       type: GraphQLDateTime,
       resolve: obj => obj.Translaticiarum_Start,

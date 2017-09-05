@@ -22,7 +22,7 @@ function commit(
   Translaticiarum_Stop,
   Translaticiarum_Description
 ) {
-  return commitMutation( environment, {
+  return commitMutation(environment, {
     mutation,
     variables: {
       input: {

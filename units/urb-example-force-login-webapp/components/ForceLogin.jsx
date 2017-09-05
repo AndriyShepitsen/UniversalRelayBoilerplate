@@ -19,7 +19,7 @@ class ForceLogin extends React.Component<{ classes: Object, Viewer: Object }> {
   render() {
     const { classes, Viewer } = this.props
 
-    if ( Viewer.User_IsAnonymous )
+    if (Viewer.User_IsAnonymous)
       return <RequiresAuthenticationNotice /> // Anonymous users do not get to have a profile
     else
       return (
@@ -41,7 +41,7 @@ class ForceLogin extends React.Component<{ classes: Object, Viewer: Object }> {
 }
 
 export default createFragmentContainer(
-  withStyles( styles )( ForceLogin ),
+  withStyles(styles)(ForceLogin),
   graphql`
     fragment ForceLogin_Viewer on Viewer {
       User_IsAnonymous

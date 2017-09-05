@@ -9,7 +9,7 @@ export default mutationWithClientMutationId({
   name: 'ToDoDelete',
 
   inputFields: {
-    id: { type: new GraphQLNonNull( GraphQLID ) },
+    id: { type: new GraphQLNonNull(GraphQLID) },
   },
 
   outputFields: {
@@ -20,8 +20,8 @@ export default mutationWithClientMutationId({
 
     Viewer: {
       type: ViewerType,
-      resolve: ( parent, args, context, { rootValue: objectManager }) =>
-        objectManager.getOneObject( 'User', {
+      resolve: (parent, args, context, { rootValue: objectManager }) =>
+        objectManager.getOneObject('User', {
           id: objectManager.getViewerUserId(),
         }),
     },
@@ -32,9 +32,9 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = fromGlobalId( id ).id
+    const local_id = fromGlobalId(id).id
 
-    await objectManager.remove( 'ToDo', { id: local_id })
+    await objectManager.remove('ToDo', { id: local_id })
 
     return { id }
   },

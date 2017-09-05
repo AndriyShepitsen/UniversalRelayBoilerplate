@@ -5,11 +5,12 @@ import { graphql } from 'react-relay'
 import React from 'react'
 import Route from 'found/lib/Route'
 
-const InscriptioScreen = props =>
+const InscriptioScreen = props => (
   <Async
-    load={import( './components/InscriptioScreen' )}
+    load={import('./components/InscriptioScreen')}
     componentProps={props}
   />
+)
 
 export default (
   <Route key="inscriptio" path="inscriptio">

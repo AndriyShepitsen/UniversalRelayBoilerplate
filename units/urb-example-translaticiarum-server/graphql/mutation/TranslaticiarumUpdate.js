@@ -9,10 +9,10 @@ export default mutationWithClientMutationId({
   name: 'TranslaticiarumUpdate',
 
   inputFields: {
-    id: { type: new GraphQLNonNull( GraphQLID ) },
-    Translaticiarum_Start: { type: new GraphQLNonNull( GraphQLString ) },
-    Translaticiarum_Stop: { type: new GraphQLNonNull( GraphQLString ) },
-    Translaticiarum_Description: { type: new GraphQLNonNull( GraphQLString ) },
+    id: { type: new GraphQLNonNull(GraphQLID) },
+    Translaticiarum_Start: { type: new GraphQLNonNull(GraphQLString) },
+    Translaticiarum_Stop: { type: new GraphQLNonNull(GraphQLString) },
+    Translaticiarum_Description: { type: new GraphQLNonNull(GraphQLString) },
   },
 
   outputFields: {
@@ -23,7 +23,7 @@ export default mutationWithClientMutationId({
         { ...args },
         context,
         { rootValue: objectManager }
-      ) => objectManager.getOneObject( 'Translaticiarum', { id: local_id }),
+      ) => objectManager.getOneObject('Translaticiarum', { id: local_id }),
     },
   },
 
@@ -37,9 +37,9 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = fromGlobalId( id ).id
+    const local_id = fromGlobalId(id).id
 
-    await objectManager.update( 'Translaticiarum', {
+    await objectManager.update('Translaticiarum', {
       id: local_id,
       Translaticiarum_Start,
       Translaticiarum_Stop,

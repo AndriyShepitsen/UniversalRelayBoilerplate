@@ -26,8 +26,8 @@ class ToDoScreen extends React.Component<
     ToDo_Text_New: string
   }
 > {
-  constructor( props, context ) {
-    super( props, context )
+  constructor(props, context) {
+    super(props, context)
 
     this.state = {
       ToDo_Text_New: '',
@@ -35,7 +35,7 @@ class ToDoScreen extends React.Component<
   }
 
   _handle_onKeyDown_AddToDo = e => {
-    if ( e.keyCode === 13 ) {
+    if (e.keyCode === 13) {
       const { relay, Viewer } = this.props
 
       ToDoAddMutation.commit(
@@ -79,7 +79,7 @@ class ToDoScreen extends React.Component<
 }
 
 export default createFragmentContainer(
-  withStyles( styles )( ToDoScreen ),
+  withStyles(styles)(ToDoScreen),
   graphql`
     fragment ToDoScreen_Viewer on Viewer {
       id

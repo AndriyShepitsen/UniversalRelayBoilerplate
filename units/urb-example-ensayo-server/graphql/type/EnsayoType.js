@@ -14,7 +14,7 @@ export default new GraphQLObjectType({
   isTypeOf: object => object instanceof Ensayo,
 
   fields: {
-    id: globalIdField( 'Ensayo' ),
+    id: globalIdField('Ensayo'),
     Ensayo_Title: { type: GraphQLString, resolve: obj => obj.Ensayo_Title },
     Ensayo_Description: {
       type: GraphQLString,

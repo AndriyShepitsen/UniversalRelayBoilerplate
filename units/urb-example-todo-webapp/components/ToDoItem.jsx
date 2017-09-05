@@ -30,8 +30,8 @@ class ToDoItem extends React.Component<
     propertiesIsOpen: boolean
   }
 > {
-  constructor( props: Object, context: Object ) {
-    super( props, context )
+  constructor(props: Object, context: Object) {
+    super(props, context)
 
     this.state = {
       anchorEl: undefined,
@@ -40,7 +40,7 @@ class ToDoItem extends React.Component<
     }
   }
 
-  _handle_onClickCheckbox = ( event, ToDo_Complete ) => {
+  _handle_onClickCheckbox = (event, ToDo_Complete) => {
     const { relay, Viewer, ToDo } = this.props
 
     ToDoUpdateStatusMutation.commit(
@@ -78,7 +78,7 @@ class ToDoItem extends React.Component<
 
     const { relay, Viewer, ToDo } = this.props
 
-    ToDoDeleteMutation.commit( relay.environment, Viewer, ToDo )
+    ToDoDeleteMutation.commit(relay.environment, Viewer, ToDo)
   }
 
   handleRequestClose = () => {
@@ -94,7 +94,7 @@ class ToDoItem extends React.Component<
           button
           aria-haspopup="true"
           aria-controls="lock-menu"
-          onClick={event => this._handle_onClickCheckbox( event, !ToDo_Complete )}
+          onClick={event => this._handle_onClickCheckbox(event, !ToDo_Complete)}
         >
           <Checkbox checked={ToDo_Complete} />
           <ListItemText primary={ToDo_Text} />
@@ -112,13 +112,13 @@ class ToDoItem extends React.Component<
         >
           <MenuItem
             key="edit"
-            onClick={event => this._handle_Menu_onClick_Edit( event )}
+            onClick={event => this._handle_Menu_onClick_Edit(event)}
           >
             Edit
           </MenuItem>
           <MenuItem
             key="delete"
-            onClick={event => this._handle_Menu_onClick_Delete( event )}
+            onClick={event => this._handle_Menu_onClick_Delete(event)}
           >
             Delete
           </MenuItem>
@@ -134,7 +134,7 @@ class ToDoItem extends React.Component<
   }
 }
 
-export default createFragmentContainer( ToDoItem, {
+export default createFragmentContainer(ToDoItem, {
   Viewer: graphql`
     fragment ToDoItem_Viewer on Viewer {
       id

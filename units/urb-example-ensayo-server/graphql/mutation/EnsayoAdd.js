@@ -10,9 +10,9 @@ export default mutationWithClientMutationId({
   name: 'EnsayoAdd',
 
   inputFields: {
-    Ensayo_Title: { type: new GraphQLNonNull( GraphQLString ) },
-    Ensayo_Description: { type: new GraphQLNonNull( GraphQLString ) },
-    Ensayo_Content: { type: new GraphQLNonNull( GraphQLString ) },
+    Ensayo_Title: { type: new GraphQLNonNull(GraphQLString) },
+    Ensayo_Description: { type: new GraphQLNonNull(GraphQLString) },
+    Ensayo_Content: { type: new GraphQLNonNull(GraphQLString) },
   },
 
   outputFields: {
@@ -24,11 +24,11 @@ export default mutationWithClientMutationId({
         context,
         { rootValue: objectManager }
       ) => {
-        const an_Object = await objectManager.getOneObject( 'Ensayo', {
+        const an_Object = await objectManager.getOneObject('Ensayo', {
           id: local_id,
         })
 
-        const arr = await objectManager.getObjectList( 'Ensayo', {
+        const arr = await objectManager.getObjectList('Ensayo', {
           Ensayo_User_id: objectManager.getViewerUserId(),
         })
 
@@ -45,8 +45,8 @@ export default mutationWithClientMutationId({
 
     Viewer: {
       type: ViewerType,
-      resolve: ( parent, args, context, { rootValue: objectManager }) =>
-        objectManager.getOneObject( 'User', {
+      resolve: (parent, args, context, { rootValue: objectManager }) =>
+        objectManager.getOneObject('User', {
           id: objectManager.getViewerUserId(),
         }),
     },
@@ -57,7 +57,7 @@ export default mutationWithClientMutationId({
     context,
     { rootValue: objectManager }
   ) => {
-    const local_id = await objectManager.add( 'Ensayo', {
+    const local_id = await objectManager.add('Ensayo', {
       Ensayo_User_id: objectManager.getViewerUserId(),
       Ensayo_Title,
       Ensayo_Description,

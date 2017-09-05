@@ -14,7 +14,7 @@ export default new GraphQLObjectType({
   isTypeOf: object => object instanceof Inscriptio,
 
   fields: {
-    id: globalIdField( 'Inscriptio' ),
+    id: globalIdField('Inscriptio'),
     Inscriptio_LocationLat: {
       type: GraphQLString,
       resolve: obj => obj.Inscriptio_LocationLat,

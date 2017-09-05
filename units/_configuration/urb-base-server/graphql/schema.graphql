@@ -1,3 +1,29 @@
+type Agent implements Node {
+  # The ID of an object
+  id: ID!
+  FirstName: String
+  LastName: String
+  UserId: String
+}
+
+# A connection to a list of items.
+type AgentsConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [AgentsEdge]
+}
+
+# An edge in a connection.
+type AgentsEdge {
+  # The item at the end of the edge
+  node: Agent
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
 # A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
 # `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO
 # 8601 standard for representation of dates and times using the Gregorian calendar.
@@ -324,6 +350,8 @@ type Viewer implements Node {
   User_DisplayName: String
   User_Email: String
   User_PhoneNumberMobile: String
+  Agents(OfficeId: Int, after: String, first: Int, before: String, last: Int): AgentsConnection
+  Agent(id: ID): Agent
   Ensayos(after: String, first: Int, before: String, last: Int): EnsayosConnection
   Ensayo(id: ID): Ensayo
   Inscriptios(after: String, first: Int, before: String, last: Int): InscriptiosConnection
