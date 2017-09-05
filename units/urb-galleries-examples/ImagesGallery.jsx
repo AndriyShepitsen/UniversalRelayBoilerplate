@@ -3,7 +3,7 @@
 import { withStyles } from 'material-ui/styles'
 import PropTypes from 'prop-types'
 import React from 'react'
-import ImageGallery from 'react-image-gallery'
+import ReactImageGallery from 'react-image-gallery'
 
 const styles = theme => ({
   galleryRoot: {
@@ -58,7 +58,7 @@ class ImagesGallery extends React.Component<any, any> {
 
     return (
       <div className={classes.galleryRoot}>
-        <ImageGallery
+        <ReactImageGallery
           thumbnailPosition="right"
           useBrowserFullscreen={false}
           showFullscreenButton={true}
