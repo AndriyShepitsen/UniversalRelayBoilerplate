@@ -4,11 +4,13 @@ import elasticsearch from 'elasticsearch'
 
 require('dotenv').load()
 
-var client = new elasticsearch.Client({
+const client = new elasticsearch.Client({
   host: process.env.ELASTIC_SEARCH_CONNECTION_POINTS,
 })
 
 export default class PersisterElasticSearch {
+  stores = []
+
   getStore(entityName: string) {
     if (entityName in this.stores) return this.stores[entityName]
     else return (this.stores[entityName] = [])
@@ -66,24 +68,25 @@ export default class PersisterElasticSearch {
     ObjectType: any,
     queries: Array<{
       index: string,
-      type: entityName,
+      type: string,
       body: string
     }>
   ): Promise<any> {
-    const resultPromises = queries.map(
-      query =>
-        new Promise((resolve, reject) => {
-          client.search(query, (err, res) => {
-            if (err) reject(err)
-            else {
-              const arrRetObj = []
-              for (let entity of res.hits.hits)
-                arrRetObj.push(new ObjectType(entity._source))
-              resolve(arrRetObj)
+    const resultPromises = queries.map(query => {
+      return new Promise((resolve, reject) => {
+        client.search(query, (err, res) => {
+          if (err) reject(err)
+          else {
+            const arrRetObj = []
+            for (let entity of res.hits.hits) {
+              entity._source.id = entity._source.UserId || entity._source.Mls
+              arrRetObj.push(new ObjectType(entity._source))
             }
-          })
+            resolve(arrRetObj)
+          }
         })
-    )
+      })
+    })
 
     return Promise.all(resultPromises)
   }

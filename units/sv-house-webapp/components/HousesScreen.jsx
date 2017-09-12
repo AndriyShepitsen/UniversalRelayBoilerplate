@@ -15,7 +15,7 @@ const styles = {
   },
 }
 
-class HomeScreen extends React.Component<
+class HousesScreen extends React.Component<
   { classes: Object, Viewer: Object },
   Object
 > {
@@ -26,29 +26,29 @@ class HomeScreen extends React.Component<
   render() {
     const { classes, Viewer } = this.props
 
-    let Agents = Viewer.Agents.edges.map(({ node }) => {
+    let Houses = Viewer.Houses.edges.map(({ node }) => {
       return node
     })
 
     return (
       <ResponsiveContentArea>
         <Card className={classes.card}>
-          <CardHeader title="Home" />
-          <CardContent>
-            <h3>Office Agents</h3>
-            <hr />
-            <ol>
-              {Agents.map((agent, key) => {
-                return (
-                  <li key={key}>
-                    <span> {agent.FirstName} </span>
-                    <span> {agent.LastName}</span>
-                    <span> {agent.UserId}</span>
-                  </li>
-                )
-              })}
-            </ol>
-          </CardContent>
+          <CardHeader title="Houses" />
+          <h3>Office Houses</h3>
+          <ol>
+            {Houses.map((house, key) => {
+              return (
+                <li key={key}>
+                  <span> {house.Mls} </span>
+                  <span> {house.Street}</span>
+                  <span> {house.Price}</span>
+                  <span> {house.OfficeId}</span>
+                </li>
+              )
+            })}
+          </ol>
+
+          <CardContent />
         </Card>
       </ResponsiveContentArea>
     )
@@ -56,16 +56,17 @@ class HomeScreen extends React.Component<
 }
 
 export default createFragmentContainer(
-  withStyles(styles)(HomeScreen),
+  withStyles(styles)(HousesScreen),
   graphql`
-    fragment HomeScreen_Viewer on Viewer {
-      Agents(first: 5) {
+    fragment HousesScreen_Viewer on Viewer {
+      Houses(first: 5) @connection(key: "HousesScreen_Houses") {
         edges {
           node {
             id
-            FirstName
-            LastName
-            UserId
+            Mls
+            OfficeId
+            Street
+            Price
           }
         }
       }

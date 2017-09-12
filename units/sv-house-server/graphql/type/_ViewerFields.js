@@ -7,12 +7,12 @@ import {
   connectionFromArray,
 } from 'graphql-relay'
 
-import AgentsConnection from './AgentsConnection'
-import AgentType from './AgentType'
+import HousesConnection from './HousesConnection'
+import HouseType from './HouseType'
 
 export default {
-  Agents: {
-    type: AgentsConnection.connectionType,
+  Houses: {
+    type: HousesConnection.connectionType,
 
     args: {
       OfficeId: { type: GraphQLInt },
@@ -25,9 +25,9 @@ export default {
       context,
       { rootValue: objectManager }
     ) => {
-      const arr = await objectManager.getObjectList('Agent', {
-        index: 'agents',
-        type: 'agent',
+      const arr = await objectManager.getObjectList('House', {
+        index: 'sale',
+        type: 'house',
         body: {
           query: {
             bool: {
@@ -45,12 +45,12 @@ export default {
     },
   },
 
-  Agent: {
-    type: AgentType,
+  House: {
+    type: HouseType,
 
     args: { ...{ id: { type: GraphQLID } } },
 
     resolve: (parent, { id }, context, { rootValue: objectManager }) =>
-      objectManager.getOneObject('Agent', { id: fromGlobalId(id).id }),
+      objectManager.getOneObject('House', { id: fromGlobalId(id).id }),
   },
 }

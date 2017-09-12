@@ -18,7 +18,7 @@ export default class Agent {
   }) {
     this.id = fields.id
     this.FirstName = fields.FirstName
-    this.LastName = fields.FirstName
+    this.LastName = fields.LastName
     this.UserId = fields.UserId
   }
 }
