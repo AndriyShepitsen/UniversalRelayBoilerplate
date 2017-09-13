@@ -18,13 +18,7 @@ minWidth:275}};var
 
 
 
-
-
-
-
 TranslaticiarumScreen=function(_React$Component){_inherits(TranslaticiarumScreen,_React$Component);
-
-
 
 
 

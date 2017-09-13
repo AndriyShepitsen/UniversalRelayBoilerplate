@@ -1,5 +1,7 @@
 Object.defineProperty(exports,"__esModule",{value:true});
 
+require('../../../sv-agent-server/graphql/model/Agent');
+require('../../../sv-house-server/graphql/model/House');
 require('../../../urb-base-server/graphql/model/User.schemas');
 require('../../../urb-base-server/graphql/model/UserAccount');
 require('../../../urb-base-server/graphql/model/UserAccount.schema');
