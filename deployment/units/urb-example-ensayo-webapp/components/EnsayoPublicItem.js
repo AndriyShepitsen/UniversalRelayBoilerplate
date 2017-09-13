@@ -25,16 +25,8 @@ meta:[
 
 _react2.default.createElement(_Card2.default,null,
 _react2.default.createElement(_Card.CardHeader,{
-title:
-_react2.default.createElement('h1',null,
-contentH1),
-
-
-subheader:
-_react2.default.createElement('h2',null,
-contentH2)}),
-
-
+title:_react2.default.createElement('h1',null,contentH1),
+subheader:_react2.default.createElement('h2',null,contentH2)}),
 
 _react2.default.createElement(_Card.CardContent,null,
 new _htmlToReact.Parser().parse(Viewer.Ensayo.Ensayo_Content)))));

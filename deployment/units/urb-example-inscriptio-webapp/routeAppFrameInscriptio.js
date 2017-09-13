@@ -12,6 +12,7 @@ componentProps:props}));};exports.default=
 
 
 
+
 _react2.default.createElement(_Route2.default,{key:'inscriptio',path:'inscriptio'},
 _react2.default.createElement(_Route2.default,{
 path:'/',

@@ -96,6 +96,7 @@ handlerClose:this._handle_Close_Properties}))));
 
 
 
+
 }}]);return EnsayoInPaceEditScreen;}(_react2.default.Component);exports.default=
 
 

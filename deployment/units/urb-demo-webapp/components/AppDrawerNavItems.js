@@ -10,46 +10,16 @@ AppDrawernavItems=function(_React$Component){_inherits(AppDrawernavItems,_React$
 return(
 _react2.default.createElement(_List2.default,null,
 _react2.default.createElement(_AppDrawerNavItem2.default,{
-key:'/force-login',
+key:'/',
 openImmediately:true,
-title:'Force Login',
-to:'/force-login'}),
+title:'Home Page',
+to:'/'}),
 
 _react2.default.createElement(_AppDrawerNavItem2.default,{
-key:'/todo',
+key:'/houses',
 openImmediately:true,
-title:'To Dos',
-to:'/todo'}),
-
-_react2.default.createElement(_AppDrawerNavItem2.default,{
-key:'/Ensayo/edit',
-openImmediately:true,
-title:'Ensayo edit',
-to:'/Ensayo/edit'}),
-
-_react2.default.createElement(_AppDrawerNavItem2.default,{
-key:'/ensayo/in-place-edit',
-openImmediately:true,
-title:'Ensayo in place',
-to:'/ensayo/in-place-edit'}),
-
-_react2.default.createElement(_AppDrawerNavItem2.default,{
-key:'/ensayo',
-openImmediately:true,
-title:'Ensayo public',
-to:'/ensayo'}),
-
-_react2.default.createElement(_AppDrawerNavItem2.default,{
-key:'/inscriptio',
-openImmediately:true,
-title:'Inscriptio',
-to:'/inscriptio'}),
-
-_react2.default.createElement(_AppDrawerNavItem2.default,{
-key:'/translaticiarum',
-openImmediately:true,
-title:'Translaticiarum',
-to:'/translaticiarum'})));
+title:'House',
+to:'/houses'})));
 
 
 
