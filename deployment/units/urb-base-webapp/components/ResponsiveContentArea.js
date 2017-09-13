@@ -26,11 +26,7 @@ ResponsiveContentArea=function(_React$Component){_inherits(ResponsiveContentArea
 {var
 classes=this.props.classes;
 
-return(
-_react2.default.createElement('div',{className:classes.content},
-this.props.children));
-
-
+return _react2.default.createElement('div',{className:classes.content},this.props.children);
 }}]);return ResponsiveContentArea;}(_react2.default.Component);ResponsiveContentArea.contextTypes={rbCtx:_propTypes2.default.object};exports.default=
 
 
